@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine&family=Montserrat&display=swap');
+
+body {
+    overflow: hidden;
+    height: 100%;
+    font-family: 'BenchNine', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background: url("../resources/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top-title {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+
+.info {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+
+.content-box {
+    width: 900px;
+    padding: 5px;
+    height: 510px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 15px;
+}
+
+.credit-box {
+    width: 180px;
+    height: 80px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.socials-box {
+    width: 180px;
+    height: 80px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.icon {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 48px;
+    height: 48px;
+    float: left;
+    opacity: 0.6;
+    padding-bottom: 25px;
+    transition: 0.25s;
+}
+
+.icon:hover {
+    opacity: 0.8;
+}
+
+.logo-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: transparent;
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    border: solid 2px white;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: 10px;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0,1,.55,1);
+}
+
+.button:hover {
+    letter-spacing: 1px;
+    background-color: rgb(31, 31, 31);
+}
+
+.button-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.smaller-text {
+    font-size: 15px;
+}
+
+.url {
+    color: rgb(63, 168, 253);
+    transition: 0.25s;
+}
+
+.url:hover {
+    color: rgb(124, 189, 241);
+}
+
+.social-icon {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.25s;
+}
+
+.social-icon:hover {
+    cursor: pointer;
+    opacity: 1;
+}
