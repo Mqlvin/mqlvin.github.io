@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,200;1,300&display=swap');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    color: white;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    background-color: rgb(48, 48, 48);
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    padding: 20px 30px 30px 30px;
+}
+
+.sidebar {
+    float: left;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.top-spacer {
+    background-color: rgb(36, 36, 36);
+    margin: auto;
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(109, 76, 201);
+}
+
+.return-button {
+    width: 15%;
+    height: 60px;
+    background-color: rgb(36, 36, 36);
+    border: 0px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.25s;
+    display: inline-block;
+}
+
+.return-button:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+.chapter-button {
+    color: white;
+    border: 1px solid rgb(95, 95, 95);
+    border-right: 0px;
+    background-color: rgb(36, 36, 36);
+    width: 193px;
+    height: 50px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.25s;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.chapter-button:hover {
+    background-color: rgb(73, 73, 73);
+}
+
+.chapter-list {
+    list-style-type: none;
+    width: 100px;
+}
+
+.book-title {
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.selected-button {
+    background-color: rgb(48, 48, 48);
+}
+
+.text-content {
+    padding-left: 15px;
+}
