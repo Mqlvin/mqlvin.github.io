@@ -1,0 +1,229 @@
+<html>
+    <head>
+        <title>%%title%%</title>
+        <link rel="stylesheet" href="./documentation.css">
+        <script src="https://kit.fontawesome.com/8818778461.js" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+    </head> 
+
+    <body onload="addEventListeners()">
+        <div class="nav-wrapper">
+            <div class="title-wrapper">
+                <div class="title-logo"><i class="fa-solid fa-book fa-2xl title-book"></i></div>
+                <div class="title-text"><p>Docs</p></div>
+            </div>
+            <div class="nav-search-wrapper">
+                <div class="nav-search">
+                    <i class="fa-solid fa-magnifying-glass fa-xl search-glass"></i>
+                    <input class="searchbar" type="text" placeholder="Search documentation...">
+                </div>
+            </div>
+            <div class="nav-page-wrapper">
+                <div class="list-wrapper">
+                    <ul>
+                        <div class="chapter-parent">
+                            <div class="chapter-title">
+                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">Installation</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                            </div>
+                            <div class="expandable-list">
+                                <p class="page-list-item active-item">Downloading</p>
+                                <p class="page-list-item">Setting up</p>
+                            </div>
+                        </div>
+                        <div class="chapter-parent">
+                            <div class="chapter-title">
+                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">API</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                            </div>
+                            <div class="expandable-list">
+                                <p class="page-list-item">Overview</p>
+                                <p class="page-list-item">Usages</p>
+                                <p class="page-list-item">Examples</p>
+                            </div>
+                        </div>
+                        <div class="chapter-parent">
+                            <div class="chapter-title">
+                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">Shipping</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                            </div>
+                            <div class="expandable-list">
+                                <p class="page-list-item">Compilation</p>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-footer">
+                <div class="footer-text-wrapper">
+                    <p class="footer-text">Edited: 29th Feb 2022</p>
+                    <p class="footer-text">Created: 26th Feb 2022</p>
+                </div>
+                <div class="color-toggle">
+                    <i class="fa-solid fa-moon fa-xl icon-color-toggle"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content page1">
+                <div class="content-head">
+                    <p class="content-head-text">In: Installation / Download</p>
+                    <p class="content-head-version">Software Name#0.01</p>
+                </div>
+
+
+                <!--
+
+                Type: General modifications
+                Classes:
+                - content-thin-underline
+                - content-underline
+                - content-thick-underline
+                
+                - content-left
+                - content-center
+                - content-right
+
+                -->
+
+                <!-- 
+
+                Type: Title
+                Classes:
+                - content-light-title: A light title.
+                - content-title: A simple title.
+                - content-heavy-title: A bolder title.
+
+                -->
+                
+                <p class="content-heavy-title content-center">Installation / Download</p>
+
+                <div class="content-paragraph">
+                    <span class="content-text">This is the start of our content. To start the installation, you will first need to download the files. These can be
+                        accessed from
+                    </span>
+                    <span class="content-text content-link">
+                        <a class="content-link" href="https://google.com">the following link</a>
+                    </span>
+                    <span class="content-text"> which contains the official download link for the project. The file you will download is in a </span>
+                    <span class="content-text content-emboss content-code-font">zip</span>
+                    <span class="content-text"> format, so you may need a </span>
+                    <span class="content-text content-bold">3rd party application</span>
+                    <span class="content-text">  to extract the files inside the archive.</span>
+                    <p class="content-text content-inline-code content-code-font">public static String myString = "String";<br>public static Boolean isEnabled = false;</p>
+                </div>
+
+                <!--
+
+                <div class="content-note">
+                    <div class="content-note-title-wrapper">
+                        <i class="fa-solid fa-circle-info content-note-icon"></i>
+                        <p class="content-note-title">note</p>
+                    </div>
+                    <div class="content-paragraph">
+                        <span class="content-text">The file is quite large. Because of this it may take a while to download, so please do not contact the download host about it!
+                        </span>
+                    </div>
+                </div>
+
+
+
+                <div class="content-warn">
+                    <div class="content-warn-title-wrapper">
+                        <i class="fa-solid fa-circle-exclamation content-warn-icon"></i>
+                        <p class="content-warn-title">warning</p>
+                    </div>
+                    <div class="content-paragraph">
+                        <span class="content-text">As stated before, the file is quite large. Because of this it may take a while to download, so please do not contact the download host about it!
+                        </span>
+                    </div>
+                </div>
+
+
+                
+                <div class="content-alert">
+                    <div class="content-alert-title-wrapper">
+                        <i class="fa-solid fa-triangle-exclamation content-alert-icon"></i>
+                        <p class="content-alert-title">error</p>
+                    </div>
+                    <div class="content-paragraph">
+                        <span class="content-text">Just so you know, the file is quite large. Because of this it may take a while to download, so please do not contact the download host about it!
+                        </span>
+                    </div>
+                </div>
+
+
+                
+                <div class="content-bug">
+                    <div class="content-bug-title-wrapper">
+                        <i class="fa-solid fa-bug content-bug-icon"></i>
+                        <p class="content-bug-title">error</p>
+                    </div>
+                    <div class="content-paragraph">
+                        <span class="content-text">There is a bug causing a slow download, I'm implementing a fix as soon as possible!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="content-line-split"></div>
+
+                <div class="content-bug">
+                    <div class="content-bug-title-wrapper">
+                        <i class="fa-solid fa-bug content-bug-icon"></i>
+                        <p class="content-bug-title">error</p>
+                    </div>
+                    <div class="content-paragraph">
+                        <span class="content-text">There is a bug causing a slow download, I'm implementing a fix as soon as possible!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-header">
+                        <p class="content-header-text">Beginning</p>
+                    </div>
+
+                    <div class="content-paragraph">
+                        <span class="content-text">This is the start of our content. To start the installation, you will first need to download the files. These can be
+                            accessed from
+                        </span>
+                        <span class="content-text content-link">
+                            <a class="content-link" href="https://google.com">the following link</a>
+                        </span>
+                        <span class="content-text"> which contains the official download link for the project. The file you will download is in a </span>
+                        <span class="content-text content-emboss content-code-font">zip</span>
+                        <span class="content-text"> format, so you may need a </span>
+                        <span class="content-text content-bold">3rd party application</span>
+                        <span class="content-text">  to extract the files inside the archive.</span>
+                        <p class="content-text content-inline-code content-code-font">public static String myString = "String";<br>public static Boolean isEnabled = false;</p>
+                    </div>
+                </div>
+
+                -->
+
+                <div class="code-box-wrapper">
+                    <div class="code-box-header">
+                        <p class="code-box-language">Java</p>
+                        <i class="fa-solid fa-copy copy-icon"></i>
+                    </div>
+                    <div class="code-box">
+                        <div class="code-indent">
+                            <p class="content-code content-code-font">@EventHandler</p>
+                            <p class="content-code content-code-font">public void onPlayerFly(PlayerFlyEvent event) {</p>
+                                <div class="code-indent">
+                                    <p class="content-code content-code-font">if(event.getPlayer().isFlying()) {</p>
+                                    <div class="code-indent">
+                                        <p class="content-code content-code-font">event.setCancelled(false);</p>
+                                    </div>
+                                        <p class="content-code content-code-font">}</p>
+                                </div>
+                                <p class="content-code content-code-font">}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
