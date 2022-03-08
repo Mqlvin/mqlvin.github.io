@@ -6,7 +6,7 @@
         <script src="./script.js"></script>
     </head> 
 
-    <body onload="addEventListeners()">
+    <body onload="addEventListeners()" class="dark">
         <div class="nav-wrapper">
             <div class="title-wrapper">
                 <div class="title-logo"><i class="fa-solid fa-book fa-2xl title-book"></i></div>
@@ -23,8 +23,8 @@
                     <ul>
                         <div class="chapter-parent">
                             <div class="chapter-title">
-                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">Installation</li>
-                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                                <li class="chapter-text" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)">Installation</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)"></i>
                             </div>
                             <div class="expandable-list">
                                 <p class="page-list-item active-item">Downloading</p>
@@ -33,8 +33,8 @@
                         </div>
                         <div class="chapter-parent">
                             <div class="chapter-title">
-                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">API</li>
-                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                                <li class="chapter-text" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)">API</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)"></i>
                             </div>
                             <div class="expandable-list">
                                 <p class="page-list-item">Overview</p>
@@ -44,8 +44,8 @@
                         </div>
                         <div class="chapter-parent">
                             <div class="chapter-title">
-                                <li class="chapter-text" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)">Shipping</li>
-                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('#38415c', this)" onmouseout="hoverBGC('#171d3b', this)"></i>
+                                <li class="chapter-text" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)">Shipping</li>
+                                <i class="fa-solid fa-caret-right fa-lg chapter-expander" onmouseover="hoverBGC('--nav-background-lighter', this)" onmouseout="hoverBGC('--nav-background', this)"></i>
                             </div>
                             <div class="expandable-list">
                                 <p class="page-list-item">Compilation</p>
@@ -60,7 +60,7 @@
                     <p class="footer-text">Created: 26th Feb 2022</p>
                 </div>
                 <div class="color-toggle">
-                    <i class="fa-solid fa-moon fa-xl icon-color-toggle"></i>
+                    <i class="fa-solid fa-moon fa-xl icon-color-toggle" onclick="toggleTheme()"></i>
                 </div>
             </div>
         </div>
@@ -167,10 +167,12 @@
 
                 <div class="content-line-split"></div>
 
+            -->
+
                 <div class="content-bug">
                     <div class="content-bug-title-wrapper">
                         <i class="fa-solid fa-bug content-bug-icon"></i>
-                        <p class="content-bug-title">error</p>
+                        <p class="content-bug-title">bug</p>
                     </div>
                     <div class="content-paragraph">
                         <span class="content-text">There is a bug causing a slow download, I'm implementing a fix as soon as possible!
@@ -198,8 +200,6 @@
                         <p class="content-text content-inline-code content-code-font">public static String myString = "String";<br>public static Boolean isEnabled = false;</p>
                     </div>
                 </div>
-
-                -->
 
                 <div class="code-box-wrapper">
                     <div class="code-box-header">

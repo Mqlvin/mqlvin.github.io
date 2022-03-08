@@ -1,3 +1,14 @@
+function getCssVar(style) {
+    var element = document.getElementsByTagName('body')[0];
+    if(!element || !getComputedStyle(element).getPropertyValue(style)) {
+        return false;
+    }
+    return getComputedStyle(element).getPropertyValue(style);
+  }
+
+
+
+
 
 
 function addEventListeners() {
@@ -46,7 +57,17 @@ function addEventListeners() {
 }
 
 function hoverBGC(color, element) {
-    element.closest(".chapter-parent").style.backgroundColor = color;
+    element.closest(".chapter-parent").style.backgroundColor = getCssVar(color).replace(" ", "");
+}
+
+function toggleTheme() {
+    var bodyElement = document.body;
+
+    if(bodyElement.classList.contains("light")) {
+        bodyElement.classList.replace("light", "dark");
+    } else {
+        bodyElement.classList.replace("dark", "light");
+    }
 }
 
 
