@@ -4,12 +4,7 @@ function getCssVar(style) {
         return false;
     }
     return getComputedStyle(element).getPropertyValue(style);
-  }
-
-
-
-
-
+}
 
 function addEventListeners() {
     var pagesList = document.getElementsByClassName("page-list-item");
