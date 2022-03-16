@@ -110,10 +110,9 @@
                     <span class="content-text"> format, so you may need a </span>
                     <span class="content-text content-bold">3rd party application</span>
                     <span class="content-text">  to extract the files inside the archive.</span>
-                    <p class="content-text content-inline-code content-code-font">public static String myString = "String";<br>public static Boolean isEnabled = false;</p>
+                    <p class="content-text content-inline-code content-code-font">public static String myString = "String";</p>
+                    <p class="content-text content-inline-code content-code-font">public static Boolean isEnabled = false;</p>
                 </div>
-
-                <!--
 
                 <div class="content-note">
                     <div class="content-note-title-wrapper">
@@ -167,8 +166,6 @@
 
                 <div class="content-line-split"></div>
 
-            -->
-
                 <div class="content-bug">
                     <div class="content-bug-title-wrapper">
                         <i class="fa-solid fa-bug content-bug-icon"></i>
@@ -203,26 +200,33 @@
 
                 <div class="code-box-wrapper">
                     <div class="code-box-header">
-                        <p class="code-box-language">Java</p>
-                        <i class="fa-solid fa-copy copy-icon"></i>
+                    <p class="code-box-language">Code (Java):</p>
+                    <i class="fa-solid fa-copy copy-icon"></i>
                     </div>
                     <div class="code-box">
-                        <div class="code-indent">
-                            <p class="content-code content-code-font">@EventHandler</p>
-                            <p class="content-code content-code-font">public void onPlayerFly(PlayerFlyEvent event) {</p>
-                                <div class="code-indent">
-                                    <p class="content-code content-code-font">if(event.getPlayer().isFlying()) {</p>
-                                    <div class="code-indent">
-                                        <p class="content-code content-code-font">event.setCancelled(false);</p>
-                                    </div>
-                                        <p class="content-code content-code-font">}</p>
-                                </div>
-                                <p class="content-code content-code-font">}</p>
-                        </div>
+                    <div class="code-indent">
+                    <p class="content-code content-code-font grey-code-background">public static void startSeasons() {</p>
+                    <div class="code-indent">
+                    <p class="content-code content-code-font white-code-background">Bukkit.getScheduler().scheduleSyncRepeatingTask(Seasons.getInstance(), () -> {</p>
+                    <div class="code-indent">
+                    <p class="content-code content-code-font grey-code-background">SeasonsUtil.updateSeason();</p>
+                    <p class="content-code content-code-font white-code-background">if((SeasonsUtil.getCurrentDays() % 90) > 30 && (SeasonsUtil.getCurrentDays() % 90) < 60) {</p>
+                    <div class="code-indent">
+                    <p class="content-code content-code-font grey-code-background">WeatherUtil.setRain(new Random().nextInt(300));</p>
                     </div>
-
-
-                </div>
+                    <p class="content-code content-code-font white-code-background">}</p>
+                    </div>
+                    <p class="content-code content-code-font grey-code-background">}, 0L, 1200L);</p>
+                    </div>
+                    <p class="content-code content-code-font white-code-background">}</p>
+                    <p class="content-code content-code-font grey-code-background"></p>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
             </div>
         </div>
     </body>
