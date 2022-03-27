@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shape Avoider</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="start-wrapper">
+            <p class="start-text">Press JUMP to start</p>
+        </div>
+
+        <div class="overlay">
+            <div class="end-wrapper">
+            <p class="time-text">You survived</p>
+            <p class="time-numbers">00:09</p>
+            <button class="play-again" onclick="playAgain()">Play again</button>
+            </div>
+        </div>
+
+        <div class="timer">
+            <p class="timer-text"></p>
+        </div>
+
+        <canvas class="game"></canvas>
+        <script src="./script.js"></script>
+    </body>
+</html>
