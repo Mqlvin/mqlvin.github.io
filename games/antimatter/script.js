@@ -12,6 +12,7 @@ let chance = 8;
 let godMode = false;
 let canStartNewGame = false;
 let canStartPlaying = true;
+let spawnBalls = false;
 
 class Player {
     constructor(x, y, colour) {
@@ -89,6 +90,7 @@ class Enemy {
         }
         this.colour = colour;
         this.size = size;
+        this.difficulty = getDifficulty();
     }
 
     render() {
@@ -99,8 +101,8 @@ class Enemy {
     }
 
     update() {
-        this.position.y += (this.velocity.y / 4) * (this.size / 5);
-        this.position.x += (this.velocity.x / 4) * (this.size / 5);
+        this.position.y += clamp(((this.velocity.y / 4) * (this.size / 5) / 2 * this.difficulty), 0, 12);
+        this.position.x += (this.velocity.x / 4) * (this.size / 5) / 2 * this.difficulty;
 
         this.velocity.y += gravity; 
 
@@ -167,37 +169,38 @@ c.fillRect(0, 0, canvas.width, canvas.height); // set background
 player.update(); // draw initial player
 
 addEventListener("keydown", (event) => {
-    if(gameOver) return;
-    if(event.key == "ArrowLeft") keys.left.pressed = true;
-    if(event.key == "ArrowRight") keys.right.pressed = true;
-    if(event.key == "ArrowUp") {
+    if(gameOver) playAgain();
+    if(event.key == "ArrowLeft" || event.key == "a") keys.left.pressed = true;
+    if(event.key == "ArrowRight" || event.key == "d") keys.right.pressed = true;
+    if(event.key == "ArrowUp" || event.key == "w") {
         if(keys.up.pressed != true) {
             player.jump();
         }
         keys.up.pressed = true;
     }
-    if(!gameStarted && canStartPlaying && (event.key == "ArrowLeft" || event.key == "ArrowRight" || event.key == "ArrowUp")) {
+    if(!gameStarted && canStartPlaying && (event.key == "ArrowLeft" || event.key == "ArrowRight" || event.key == "ArrowUp" || event.key == "a" || event.key == "d" || event.key == "w")) {
         var startElement = document.getElementsByClassName("start-wrapper")[0];
         startElement.style.opacity = "0"
         startElement.style.transform = "translateY(100px)";
 
+        gameStarted = true;
+        tick();
         showTimer();
         seconds = 0;
         minutes = 0;
         updateTimer();
 
-        if(!gameStarted) {
-            tick();
-        }
-        gameStarted = true;
+        setTimeout(function() {
+            spawnBalls = true;
+        }, 2000);
     }
 })
 
 addEventListener("keyup", (event) => {
     if(gameOver) return;
-    if(event.key == "ArrowLeft") keys.left.pressed = false;
-    if(event.key == "ArrowRight") keys.right.pressed = false;
-    if(event.key == "ArrowUp") keys.up.pressed = false;
+    if(event.key == "ArrowLeft" || event.key == "a") keys.left.pressed = false;
+    if(event.key == "ArrowRight" || event.key == "d") keys.right.pressed = false;
+    if(event.key == "ArrowUp" || event.key == "w") keys.up.pressed = false;
 })
 
 function stopGame() {
@@ -214,6 +217,7 @@ function stopGame() {
     dialog.style.transform = "none";
     hideTimer();
     stop = true;
+    spawnBalls = false;
 
     setTimeout(function() {
         canStartNewGame = true;
@@ -233,9 +237,9 @@ function tick() {
     c.fillStyle = "rgba(32, 32, 32, 0.5)";
     c.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(Math.floor(Math.random() * chance) == 0 && !gameOver) {
+    if(Math.floor(Math.random() * (chance / getDifficulty()) * 2) == 0 && !gameOver && spawnBalls) {
         const size = clamp(Math.floor(Math.random() * 35), 15, 35);
-        enemies.push(new Enemy(Math.floor(Math.random() * canvas.width), -(size * 2), "hsl(" + (Math.random() * 360) + ", 60%, 50%)", size));
+        enemies.push(new Enemy(Math.floor(Math.random() * canvas.width), -(size * 2), "hsl(" + (Math.random() * 360) + ", 60%, 50%)", clamp((size * getDifficulty()) / 2 , 10, 40)));
         enemies[enemies.length - 1].velocity.y = 2;
     }
 
@@ -369,6 +373,15 @@ hideTimer();
 
 function updateTimer() {
     timerText.textContent = ((minutes.toString().length == 1 ? "0" : "") + minutes.toString()) + ":" + (((seconds).toString().length == 1 ? "0" : "") + (seconds).toString());
+    var difficulty = getDifficulty();
+    console.log(difficulty)
+    if(difficulty == 3) {
+        timerText.style.color = "rgb(185, 73, 73)";
+    } else if(difficulty == 2) {
+        timerText.style.color = "rgb(177, 128, 67)";
+    } else {
+        timerText.style.color = "rgb(200, 200, 200)";
+    }
 }
 
 function hideTimer() {
@@ -379,6 +392,15 @@ function hideTimer() {
 function showTimer() {
     timerText.style.opacity = "1";
     timerText.style.transform = "none";
+}
+
+function getDifficulty() {
+    if(minutes != 0) {
+        return 3;
+    } else if(seconds >= 30) {
+        return 2;
+    }
+    return 1;
 }
 
 function clamp(value, min, max) {
