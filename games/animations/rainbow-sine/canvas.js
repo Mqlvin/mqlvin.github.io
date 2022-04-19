@@ -19,14 +19,15 @@ class Line {
 
         this.renderx = this.x + (this.offset);
         this.rendery = canvas.height / 2;
-        this.width = 10;
+        this.width = 30;
     }
 
     draw() {
-        c.strokeStyle = (rainbow ? "hsl(" + (360 * (this.offset - rainbowOffset) / lineCount) + ", 80%, 60%)" : "rgb(255, 255, 255)");
+        c.fillStyle = (rainbow ? "hsl(" + (360 * (this.offset - rainbowOffset) / lineCount) + ", 80%, 60%)" : "rgb(255, 255, 255)");
         c.lineWidth = 15;
-        c.strokeRect(this.renderx, this.rendery, this.width, Math.sin(current - 1 / lineCount * this.offset * scale) * amplifier);
-        c.strokeRect(this.renderx, this.rendery, this.width, -Math.sin(current - 1 / lineCount * this.offset * scale) * amplifier);
+        c.fillRect(this.renderx, this.rendery, this.width, Math.sin(current - 1 / lineCount * this.offset * scale) * amplifier);
+        c.fillRect(this.renderx, this.rendery, this.width, -Math.sin(current - 1 / lineCount * this.offset * scale) * amplifier);
+        c.fillRect(this.renderx, this.rendery - 1, this.width, 2); // stitching
     }
 }
 
