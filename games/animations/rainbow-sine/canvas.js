@@ -1,4 +1,4 @@
-const canvas = document.querySelector(".matrix-canvas");
+const canvas = document.querySelector(".sine-canvas");
 const c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
