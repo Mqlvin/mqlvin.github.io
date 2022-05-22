@@ -1,37 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
     <head>
-        <link rel="stylesheet" href="./home.css">
-        <script type="text/javascript" src="../scripts/main.js"></script>
-        <title>Mqlvin - Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, intial-scale = 1.0">
+        <title>Mqlvin</title>
+        <link rel="stylesheet" href="style.css">
+
     </head>
+
     <body>
-        <div class="content-box">
-            <p class="top-title text">Hi, I'm Mqlvin.</p>
-            <p class="info text">I am a mostly self-taught programmer, mainly developing in Java. 
-                <br>I enjoy Minecraft modding, and making complex
-                <br>algorithms (when they work). I also make many random programs,
-                <br>basically whatever is on my mind :)</p>
-            <p class="info">I use</p>
-            <div class="logo-holder">
-                <img class="icon smooth-edge" src="../resources/java_logo.png">
-                <img class="icon" src="../resources/html_logo.png">
-                <img class="icon" src="../resources/python_logo.png">
-                <img class="icon" src="../resources/cs_logo.png">
-                <img class="icon" src="../resources/javascript_logo.png">
+        <canvas class="background-canvas"></canvas>
+        <script src="rain.js"></script>
+
+        <div class="card">
+            <div class="profile">
+                <div class="me">
+                    <img src="static/profile.png" class="me-image">
+                    <p class="me-name">Mqlvin</p>
+                </div>
+                <div class="links">
+                    
+                </div>
             </div>
-            <div class="button-holder">
-                <a href="./docs/documentation.html"><button class="portfolio button">My Portfolio</button></a>
-                <button class="portfolio button">Tutorials / Help</button>
+            <div class="about-me">
+                <div class="about-me-title">
+                    <p class="about-me-title-text">stuff about me</p>
+                </div>
+                <p class="about-me-info">I am a (mostly) self-taught programmer, primarily developing in Java.</p><br>
+                <p class="about-me-info">Mainly developing utility programs, I also enjoy making and messing around with Minecraft mods.</p><br><br>
+                <p class="about-me-info">Currently:</p><br>
+                <p class="about-me-info"> - 🎯 Learning C++</p><br>
+                <p class="about-me-info"> - 🔧 Developing a platformer</p><br>
+                <p class="about-me-info"> - 🔧 Developing a file converter utility</p><br>
+                <p class="about-me-info"> - 🔧 Developing a Minecraft anti-malware</p><br>
             </div>
-        </div>
-        <div class="socials-box">
-            <a href="https://github.com/Mqlvin" target="_blank"><img class="social-icon gh" src="../resources/github_logo.png"></a>
-            <a><img class="social-icon dc" src="../resources/discord_logo.png" onclick="copyDiscord()"></a>
-            <a><img class="social-icon mail" src="../resources/mail_logo.png" onclick="copyMail()"></a>
-        </div>
-        <div class="credit-box">
-            <p class="info smaller-text text">My photography</p>
-            <p class="info smaller-text text">Taken in Japan</p>
         </div>
     </body>
 </html>
