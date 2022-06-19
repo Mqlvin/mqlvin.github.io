@@ -12,16 +12,16 @@ class Drop {
         this.x = Math.random() * canvas.width;
         this.y = (present ? Math.random() * canvas.height : -30);
 
-        this.velocity = 6 + (Math.random() * 5);
+        this.velocity = 4 + (Math.random() * 5);
         this.colour = (Math.random() < 0.1 ? "rgb(70, 200, 70)" : "rgb(100, 100, 100)")
     }
 
     update() {
-        this.velocity += this.velocity * 0.015;
+        this.velocity += this.velocity * 0.018;
         this.y += this.velocity;
 
         c.fillStyle = this.colour;
-        c.fillRect(this.x, this.y, 0.5, 40);
+        c.fillRect(this.x, this.y, 2, 40);
     }
 }
 
