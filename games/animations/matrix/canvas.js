@@ -4,13 +4,12 @@ const c = canvas.getContext('2d');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-let rainbow = false;
+let rainbow = true;
 let second = false;
 let offset = 0;
 
 class Line {
     constructor() {
-        this.speed = 3;
         this.height = -20;
         this.x = Math.floor(Math.random() * canvas.width);
         this.colour = "";
@@ -32,18 +31,26 @@ c.fillStyle = "rgb(0, 0, 0)";
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 let lines = [];
+let lastFrameUpdated = false;
 
 tick();
 
 function tick() {
     requestAnimationFrame(tick);
+	
+    if(lastFrameUpdated) {
+	lastFrameUpdated = false;
+	return;
+    } else {
+	lastFrameUpdated = true;
+    }
 
     c.fillStyle = "rgba(0, 0, 0, 0.08)";
     c.fillRect(0, 0, canvas.width, canvas.height);
 
     lines.push(new Line());
     lines.push(new Line());
-    
+	
     c.font = "bold 14px 'Press Start 2P'";
     lines.forEach((line, index) => {
         c.fillStyle = line.colour;
