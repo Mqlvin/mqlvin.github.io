@@ -10,7 +10,7 @@ let offset = 0;
 
 class Line {
     constructor() {
-        this.speed = 5;
+        this.speed = 3;
         this.height = -20;
         this.x = Math.floor(Math.random() * canvas.width);
         this.colour = "";
@@ -25,7 +25,6 @@ class Line {
     draw() {
         c.fillStyle = this.colour;
         c.fillText((Math.random() > 0.5 ? randomCharacter().toUpperCase() : randomCharacter()), this.x, this.height);
-        c.fillText((Math.random() > 0.5 ? randomCharacter().toUpperCase() : randomCharacter()), this.x + 12, this.height);
     }
 }
 
