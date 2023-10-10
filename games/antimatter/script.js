@@ -121,8 +121,8 @@ class Particle {
             y: y
         }
         this.velocity = {
-            x: velx * (Math.random() * 18),
-            y: vely * (Math.random() * 18)
+            x: velx * (Math.random() * 30),
+            y: vely * (Math.random() * 30)
         }
         this.colour = colour;
         this.alpha = 1;
@@ -131,7 +131,7 @@ class Particle {
 
     render() {
         c.beginPath();
-        c.globalAlpha = this.alpha;
+        c.globalAlpha = Math.max(0, this.alpha - 0.05);
         c.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2, false);
         c.fillStyle = this.colour;
         c.fill();
@@ -141,6 +141,9 @@ class Particle {
     update() {
         this.position.y += this.velocity.y;
         this.position.x += this.velocity.x;
+
+        this.velocity.x /= 1.05;
+        this.velocity.y /= 1.05;
 
         this.alpha -= 0.02;
         this.render();
@@ -237,9 +240,9 @@ function tick() {
     c.fillStyle = "rgba(32, 32, 32, 0.5)";
     c.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(Math.floor(Math.random() * (chance / getDifficulty()) * 2) == 0 && !gameOver && spawnBalls) {
+    if(Math.floor(Math.random() * (chance / getDifficulty()) * 2 / (1 - getDifficultyMult())) == 0 && !gameOver && spawnBalls) {
         const size = clamp(Math.floor(Math.random() * 35), 15, 35);
-        enemies.push(new Enemy(Math.floor(Math.random() * canvas.width), -(size * 2), "hsl(" + (Math.random() * 360) + ", 60%, 50%)", clamp((size * getDifficulty()) / 2 , 10, 40)));
+        enemies.push(new Enemy(Math.floor(Math.random() * canvas.width), -(size * 2), "hsl(" + (Math.random() * 360) + ", 60%, 50%)", clamp((size * (getDifficultyMult() * 2 + 1)) / 2 , 10, 40)));
         enemies[enemies.length - 1].velocity.y = 2;
     }
 
@@ -374,7 +377,6 @@ hideTimer();
 function updateTimer() {
     timerText.textContent = ((minutes.toString().length == 1 ? "0" : "") + minutes.toString()) + ":" + (((seconds).toString().length == 1 ? "0" : "") + (seconds).toString());
     var difficulty = getDifficulty();
-    console.log(difficulty)
     if(difficulty == 3) {
         timerText.style.color = "rgb(185, 73, 73)";
     } else if(difficulty == 2) {
@@ -401,6 +403,12 @@ function getDifficulty() {
         return 2;
     }
     return 1;
+}
+
+// returns number between 1 and 0 based on the timer
+function getDifficultyMult() {
+    if(minutes > 2) return 1;
+    else return ((minutes * 60 + seconds) / 120);
 }
 
 function clamp(value, min, max) {
