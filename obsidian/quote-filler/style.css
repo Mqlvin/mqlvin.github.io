@@ -1,0 +1,61 @@
+* {
+    font-family: 'Nunito', sans-serif;
+
+    padding: 0;
+    margin: 0;
+}
+
+.filled {
+    font-size: 18px;
+    font-weight: 400;
+
+    transition: 0.25s;
+}
+
+.unfilled {
+    font-weight: 500;
+    font-size: 18px;
+
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(148, 161, 221);
+
+    transform: translateY(1px);
+    text-align: center;
+
+    width: 3ch;
+
+    transition: 0.25s;
+}
+
+
+
+.poem-div {
+    width: 600px;
+    min-height: 300px;
+    padding: 20px 0px 50px 0px;
+
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 40px;
+
+    margin-left: calc(50% - 300px);
+    margin-top: 50px;
+}
+
+.poem-title {
+    font-weight: 200;
+    text-align: center;
+
+    width: 100%;
+    
+    padding: 20px 0px 20px 0px;
+}
+
+.quote-container {
+    /* border: 1px solid rgba(255, 0, 0, 0.1); */
+    padding: 10px 10px 10px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
