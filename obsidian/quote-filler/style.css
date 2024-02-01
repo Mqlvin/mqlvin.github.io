@@ -68,3 +68,7 @@
 body::-webkit-scrollbar { 
     display: none;
 }
+
+body {
+    padding-bottom: 40px;
+}
