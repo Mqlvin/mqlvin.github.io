@@ -20,7 +20,7 @@
     background: none;
     outline: none;
     border: none;
-    border-bottom: 2px solid rgb(148, 161, 221);
+    border-bottom: 2px solid rgb(138, 92, 245);
 
     transform: translateY(1px);
     text-align: center;
@@ -38,7 +38,7 @@
     padding: 20px 0px 50px 0px;
 
     border: 1px solid rgb(40, 40, 40);
-    border-radius: 40px;
+    border-radius: 32px;
 
     margin-left: calc(50% - 300px);
     margin-top: 50px;
