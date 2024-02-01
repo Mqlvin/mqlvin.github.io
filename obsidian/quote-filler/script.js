@@ -66,7 +66,7 @@ function finished(target) {
     let allElements = target.childNodes;
 
     for(let i = 0; i < allElements.length; i++) {
-        allElements[i].style.color = "rgb(35, 121, 46)";
+        allElements[i].style.color = "rgb(129, 221, 141)";
         allElements[i].style.fontWeight = "500";
     }
 }
