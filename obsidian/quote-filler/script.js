@@ -1,7 +1,7 @@
 function appendQuote(parent, text) {
     let quoteWords = text.split(" ");
     let shownIndexes = [];
-    for(let i = 0; i < quoteWords.length; i++) { quoteWords[i] = quoteWords[i].replace(",", "").replace("/", "") }
+    for(let i = 0; i < quoteWords.length; i++) { quoteWords[i] = quoteWords[i].replace(",", ""); }
     for(let i = 0; i < 1; i++) { shownIndexes.push(Math.floor(Math.random() * quoteWords.length)); }
 
     let container = document.createElement("div");
