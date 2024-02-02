@@ -110,3 +110,18 @@ let prelude = createPoemDiv(document.body, "The Prelude");
 appendQuote(prelude, "a huge peak, black and huge");
 appendQuote(prelude, "lustily I dipped my oars into the silent lake");
 appendQuote(prelude, "there hung a darkness, call it solitude or blank desertion");
+
+let mld = createPoemDiv(document.body, "My Last Dutchess");
+appendQuote(mld, "half flush that dies along her throat");
+appendQuote(mld, "she liked whatever she looked on, and her looks went everywhere");
+appendQuote(mld, "as if she ranked my gift of a nine-hundred-years-old name with anybodys gift");
+
+let cotlb = createPoemDiv(document.body, "The Charge Of The Light Brigade");
+appendQuote(cotlb, "cannon to the right of them / cannon to the left of them / cannon behind them");
+appendQuote(cotlb, "into the jaws of death rode the 500");
+appendQuote(cotlb, "valley of death");
+
+let exposure = createPoemDiv(document.body, "Exposure");
+appendQuote(exposure, "our brains ache, in the merciless iced east winds that knife us");
+appendQuote(exposure, "but nothing happens");
+appendQuote(exposure, "sudden successive flights of bullets streak the silence");
