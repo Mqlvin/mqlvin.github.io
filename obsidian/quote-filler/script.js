@@ -168,7 +168,7 @@ appendQuote(bayonetCharge, "what cold clockwork of the stars and the nations / w
 appendQuote(bayonetCharge, "threw up a yellow hare that rolled like a flame");
 
 let remains = createPoemDiv(quoteContainers, "Remains");
-appendQuote(remains, "the drink and the drugs won't flush him out");
+appendQuote(remains, "the drink and the drugs wont flush him out");
 appendQuote(remains, "his bloody life in my bloody hands");
 appendQuote(remains, "probably armed, possibly not");
 appendQuote(remains, "his blood-shadow stays on the street");
@@ -181,7 +181,7 @@ appendQuote(poppies, "sellotape bandaged around my hand");
 let wph = createPoemDiv(quoteContainers, "War Photographer");
 appendQuote(wph, "spools of suffering set out in ordered rows");
 appendQuote(wph, "a priest preparing to intone a Mass");
-appendQuote(wph, "the reader's eyeballs prick / with tears between the bath and pre lunch beers");
+appendQuote(wph, "the readers eyeballs prick / with tears between the bath and pre lunch beers");
 
 let tissue = createPoemDiv(quoteContainers, "Tissue");
 appendQuote(tissue, "might fly our lives like paper kites");
@@ -201,7 +201,7 @@ appendQuote(kamikaze, "as though he no longer existed");
 appendQuote(kamikaze, "he must have wondered / which was the better way to die");
 
 let comh = createPoemDiv(quoteContainers, "Checking Out Me History");
-appendQuote(comh, "bandage up me eye… blind me to me own identity");
+appendQuote(comh, "bandage up me eye / blind me to me own identity");
 appendQuote(comh, "beacons / a star / a sunrise");
 appendQuote(comh, "I carving out me identity");
 
