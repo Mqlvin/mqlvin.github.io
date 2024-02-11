@@ -74,31 +74,28 @@ function onTextChange(event, quoteWords) {
 function finished(target) {
     let allElements = target.childNodes;
 
-    console.log(allElements)
 
     for(let i = 0; i < allElements.length; i++) {
         allElements[i].style.color = "rgb(129, 221, 141)";
         allElements[i].style.fontWeight = "500";
     }
 
+
     
     let singleContainer = target; // container of a single set of inputs/spans
-    console.log(singleContainer)
     let quoteContainer = singleContainer.parentNode; // container of all the singleContainers
-    console.log(quoteContainer)
+    
     if([...quoteContainer.children].indexOf(singleContainer) + 1 == quoteContainer.children.length) { // if this is the last quote in the container
-        console.log("END OF CONTAINER")
+        // This is the end of a container - can make it move on to the next one here if needed
     } else {
         let nextSingleContainer = quoteContainer.children[[...quoteContainer.children].indexOf(singleContainer) + 1];
         let firstInputIndex = 0;
-        console.log(nextSingleContainer)
 
         while(nextSingleContainer.children[firstInputIndex].nodeName == "SPAN") {
             firstInputIndex++;
         }
 
         nextSingleContainer.childNodes[firstInputIndex].focus();
-        console.log(firstInputIndex);
     }
 }
 
