@@ -1,8 +1,17 @@
+const WORDS_SHOWN = 3; // max words shown
+const REQUIRE_MINIMUM = 2; // require at least this many words
+
 function appendQuote(parent, text) {
     let quoteWords = text.split(" ");
     let shownIndexes = [];
     for(let i = 0; i < quoteWords.length; i++) { quoteWords[i] = quoteWords[i].replace(",", ""); }
-    for(let i = 0; i < 1; i++) { shownIndexes.push(Math.floor(Math.random() * quoteWords.length)); }
+    for(let i = 0; i < Math.min(WORDS_SHOWN, quoteWords.length - REQUIRE_MINIMUM); i++) { 
+        let tryIndex = Math.floor(Math.random() * quoteWords.length);
+        while(shownIndexes.includes(tryIndex)) {
+            tryIndex = Math.floor(Math.random() * quoteWords.length)
+        }
+        shownIndexes.push(tryIndex);
+    }
 
     let container = document.createElement("div");
     container.classList.add("quote-container");
@@ -46,7 +55,7 @@ function onTextChange(event, quoteWords) {
             finished(element.parentNode);
 
         } else {
-            while(element.parentNode.childNodes[index + 1] != undefined && element.parentNode.childNodes[index + 1].nodeName == "SPAN") {
+            while(element.parentNode.childNodes[index + 1] != undefined && element.parentNode.childNodes[index + 1].nodeName == "SPAN") { // while there is another element, and its called SPAN - we need the first input
                 index++;    
             }
             
@@ -65,9 +74,31 @@ function onTextChange(event, quoteWords) {
 function finished(target) {
     let allElements = target.childNodes;
 
+    console.log(allElements)
+
     for(let i = 0; i < allElements.length; i++) {
         allElements[i].style.color = "rgb(129, 221, 141)";
         allElements[i].style.fontWeight = "500";
+    }
+
+    
+    let singleContainer = target; // container of a single set of inputs/spans
+    console.log(singleContainer)
+    let quoteContainer = singleContainer.parentNode; // container of all the singleContainers
+    console.log(quoteContainer)
+    if([...quoteContainer.children].indexOf(singleContainer) + 1 == quoteContainer.children.length) { // if this is the last quote in the container
+        console.log("END OF CONTAINER")
+    } else {
+        let nextSingleContainer = quoteContainer.children[[...quoteContainer.children].indexOf(singleContainer) + 1];
+        let firstInputIndex = 0;
+        console.log(nextSingleContainer)
+
+        while(nextSingleContainer.children[firstInputIndex].nodeName == "SPAN") {
+            firstInputIndex++;
+        }
+
+        nextSingleContainer.childNodes[firstInputIndex].focus();
+        console.log(firstInputIndex);
     }
 }
 
@@ -83,16 +114,16 @@ function createPoemDiv(parent, name) {
     text.textContent = name;
     div.appendChild(text);
 
-    parent.appendChild(div);
+    parent.push(div);
 
     return div;
 }
 
 
+let quoteContainers = [];
 
 
-
-let ozymandias = createPoemDiv(document.body, "Ozymandias");
+let ozymandias = createPoemDiv(quoteContainers, "Ozymandias");
 appendQuote(ozymandias, "I met a traveller from an antique land");
 appendQuote(ozymandias, "Two vast, trunkless legs of stone");
 appendQuote(ozymandias, "wrinkled lip, and sneer of cold command");
@@ -100,28 +131,86 @@ appendQuote(ozymandias, "king of kings");
 appendQuote(ozymandias, "Look on my works, ye Mighty, and despair");
 appendQuote(ozymandias, "Nothing besides remains");
 
-let london = createPoemDiv(document.body, "London");
+let london = createPoemDiv(quoteContainers, "London");
 appendQuote(london, "I wander through each chartered street");
 appendQuote(london, "chartered Thames");
 appendQuote(london, "Marks of weakness, marks of woe");
 appendQuote(london, "mind-forged manacles");
 
-let prelude = createPoemDiv(document.body, "The Prelude");
+let prelude = createPoemDiv(quoteContainers, "The Prelude");
 appendQuote(prelude, "a huge peak, black and huge");
 appendQuote(prelude, "lustily I dipped my oars into the silent lake");
 appendQuote(prelude, "there hung a darkness, call it solitude or blank desertion");
 
-let mld = createPoemDiv(document.body, "My Last Dutchess");
+let mld = createPoemDiv(quoteContainers, "My Last Dutchess");
 appendQuote(mld, "half flush that dies along her throat");
 appendQuote(mld, "she liked whatever she looked on, and her looks went everywhere");
 appendQuote(mld, "as if she ranked my gift of a nine-hundred-years-old name with anybodys gift");
 
-let cotlb = createPoemDiv(document.body, "The Charge Of The Light Brigade");
+let cotlb = createPoemDiv(quoteContainers, "The Charge Of The Light Brigade");
 appendQuote(cotlb, "cannon to the right of them / cannon to the left of them / cannon behind them");
 appendQuote(cotlb, "into the jaws of death rode the 500");
 appendQuote(cotlb, "valley of death");
 
-let exposure = createPoemDiv(document.body, "Exposure");
+let exposure = createPoemDiv(quoteContainers, "Exposure");
 appendQuote(exposure, "our brains ache, in the merciless iced east winds that knife us");
 appendQuote(exposure, "but nothing happens");
 appendQuote(exposure, "sudden successive flights of bullets streak the silence");
+
+let soti = createPoemDiv(quoteContainers, "Storm on the Island");
+appendQuote(soti, "spits like a tame cat / turned savage");
+appendQuote(soti, "wind dives / and strafes invisibly");
+appendQuote(soti, "strange, it is a huge nothing that we fear");
+
+let bayonetCharge = createPoemDiv(quoteContainers, "Bayonet Charge");
+appendQuote(bayonetCharge, "suddenly he awoke and was running");
+appendQuote(bayonetCharge, "what cold clockwork of the stars and the nations / was he the hand pointing that second");
+appendQuote(bayonetCharge, "threw up a yellow hare that rolled like a flame");
+
+let remains = createPoemDiv(quoteContainers, "Remains");
+appendQuote(remains, "the drink and the drugs won't flush him out");
+appendQuote(remains, "his bloody life in my bloody hands");
+appendQuote(remains, "probably armed, possibly not");
+appendQuote(remains, "his blood-shadow stays on the street");
+
+let poppies = createPoemDiv(quoteContainers, "Poppies");
+appendQuote(poppies, "the world overflowing / like a treasure chest");
+appendQuote(poppies, "released a song bird from its cage");
+appendQuote(poppies, "sellotape bandaged around my hand");
+
+let wph = createPoemDiv(quoteContainers, "War Photographer");
+appendQuote(wph, "spools of suffering set out in ordered rows");
+appendQuote(wph, "a priest preparing to intone a Mass");
+appendQuote(wph, "the reader's eyeballs prick / with tears between the bath and pre lunch beers");
+
+let tissue = createPoemDiv(quoteContainers, "Tissue");
+appendQuote(tissue, "might fly our lives like paper kites");
+appendQuote(tissue, "daylight / light shine through / thinned by age");
+appendQuote(tissue, "turned into your skin");
+
+let emigree = createPoemDiv(quoteContainers, "The Emgiree");
+appendQuote(emigree, "my shadow falls as evidence of sunlight");
+appendQuote(emigree, "my memory of it is sunlight clear");
+appendQuote(emigree, "they accuse me of being dark in their free city");
+// appendQuote(emigree, "my original view, the bright, filled paperweight");
+
+let kamikaze = createPoemDiv(quoteContainers, "Kamikaze");
+appendQuote(kamikaze, "a shaven head / full of powerful incantations");
+appendQuote(kamikaze, "little fishing boats / strung out like bunting");
+appendQuote(kamikaze, "as though he no longer existed");
+appendQuote(kamikaze, "he must have wondered / which was the better way to die");
+
+let comh = createPoemDiv(quoteContainers, "Checking Out Me History");
+appendQuote(comh, "bandage up me eye… blind me to me own identity");
+appendQuote(comh, "beacons / a star / a sunrise");
+appendQuote(comh, "I carving out me identity");
+
+
+
+function disperseContainers(parent, quoteContainers) {
+    for(let i = 0; i < quoteContainers.length; i++) {
+        parent.appendChild(quoteContainers[i]);
+    }
+}
+
+disperseContainers(document.body, quoteContainers);
