@@ -125,7 +125,7 @@ let quoteContainers = [];
 let inspector = createPoemDiv(quoteContainers, "The Inspector");
 appendQuote(inspector, "it's better to ask for the Earth than to take it");
 appendQuote(inspector, "he must wait his turn");
-appendQuote(inspector, "Public men, Mr Birling, has responsibilities as well as privilages");
+appendQuote(inspector, "Public men, Mr Birling, have responsibilities as well as privilages");
 appendQuote(inspector, "You think young women ought to be protected against unpleasant and disturbing things");
 appendQuote(inspector, "Each of you helped to kill her. Remember that. Never forget it. But then I don't think you ever will.");
 
@@ -144,7 +144,7 @@ appendQuote(mrsB, "In the morning they'll be as amused as we are");
 let mrB = createPoemDiv(quoteContainers, "Mr Birling");
 appendQuote(mrB, "If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward wouldn't it");
 appendQuote(mrB, "She'd had a lot to say - far too much - so she had to go");
-appendQuote(mrB, "If you don't come down sharply on some of these people, they'd soon be asking for the earth");
+appendQuote(mrB, "If you don't come down sharply on some of these people, they'd soon be asking for the Earth");
 appendQuote(mrB, "Inspector, I've told you this before. I don't like the tone nor the way you're handling this inquiry");
 appendQuote(mrB, "There's every excuse for what both your mother and I did");
 appendQuote(mrB, "The famous younger generation who know it all. And they can't even take a joke");
