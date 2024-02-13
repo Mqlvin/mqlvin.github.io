@@ -1,4 +1,4 @@
-const WORDS_SHOWN = 3; // max words shown
+const WORDS_SHOWN = 7; // max words shown
 const REQUIRE_MINIMUM = 2; // require at least this many words
 
 function appendQuote(parent, text) {
@@ -142,7 +142,7 @@ appendQuote(mrsB, "It was simply a piece of gross impertinence - quite deliberat
 appendQuote(mrsB, "In the morning they'll be as amused as we are");
 
 let mrB = createPoemDiv(quoteContainers, "Mr Birling");
-appendQuote(mrB, "If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward would'nt it");
+appendQuote(mrB, "If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward wouldn't it");
 appendQuote(mrB, "She'd had a lot to say - far too much - so she had to go");
 appendQuote(mrB, "If you don't come down sharply on some of these people, they'd soon be asking for the earth");
 appendQuote(mrB, "Inspector, I've told you this before. I don't like the tone nor the way you're handling this inquiry");
