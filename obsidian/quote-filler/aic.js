@@ -130,9 +130,9 @@ appendQuote(inspector, "You think young women ought to be protected against unpl
 appendQuote(inspector, "Each of you helped to kill her. Remember that. Never forget it. But then I don't think you ever will.");
 
 let sheila = createPoemDiv(quoteContainers, "Sheila");
-appendQuote(sheila, "But these girls arent cheap labour - they're people");
+appendQuote(sheila, "But these girls aren't cheap labour - they're people");
 appendQuote(sheila, "Look mummy - isn't it a beauty");
-appendQuote(sheila, "I'm not a child dont forget. I've a right to know");
+appendQuote(sheila, "I'm not a child don't forget. I've a right to know");
 appendQuote(sheila, "It's you two who are being childish - trying not to face the facts");
 
 let mrsB = createPoemDiv(quoteContainers, "Mrs Birling");
