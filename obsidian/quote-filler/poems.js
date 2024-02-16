@@ -205,8 +205,14 @@ appendQuote(comh, "I carving out me identity");
 
 
 function disperseContainers(parent, quoteContainers) {
-    for(let i = 0; i < quoteContainers.length; i++) {
-        parent.appendChild(quoteContainers[i]);
+    //for(let i = 0; i < quoteContainers.length; i++) {
+    //    parent.appendChild(quoteContainers[i]);
+    //}
+
+    while(quoteContainers.length != 0) {
+        let randIndex = Math.floor(Math.random() * (quoteContainers.length));
+        parent.appendChild(quoteContainers[randIndex]);
+        parent.splice(randIndex, 1);
     }
 }
 
