@@ -212,7 +212,7 @@ function disperseContainers(parent, quoteContainers) {
     while(quoteContainers.length != 0) {
         let randIndex = Math.floor(Math.random() * (quoteContainers.length));
         parent.appendChild(quoteContainers[randIndex]);
-        parent.splice(randIndex, 1);
+        quoteContainers.splice(randIndex, 1);
     }
 }
 
