@@ -102,7 +102,7 @@ function finished(target) {
 
 
 
-ndfunction createPoemDiv(parent, name) {
+function createPoemDiv(parent, name) {
     let div = document.createElement("div");
     div.classList.add("poem-div");
 
