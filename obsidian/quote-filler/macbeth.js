@@ -142,7 +142,7 @@ appendQuote(ladyMacbeth, "When thou durst do it, then you were a man");
 appendQuote(ladyMacbeth, "A little water clears us of this deed");
 appendQuote(ladyMacbeth, "All the perfumes of Arabia will not sweeten this little hand");
 appendQuote(ladyMacbeth, "Who would have thought the old man to have so much blood in him?");
-appendQuote(ladyMacbeth, "The Thane of Fife has a wife - where is she now?");
+appendQuote(ladyMacbeth, "The Thane of Fife had a wife - where is she now?");
 
 let macduff = createPoemDiv(quoteContainers, "Macduff");
 appendQuote(macduff, "Most sacrilegious murder hath broke up the Lord's anointed temple");
