@@ -1,5 +1,5 @@
-const WORDS_SHOWN = 5; // max words shown
-const REQUIRE_MINIMUM = 4; // require at least this many words
+const WORDS_SHOWN = 4; // max words shown
+const REQUIRE_MINIMUM = 6; // require at least this many words
 
 function appendQuote(parent, text) {
     let quoteWords = text.split(" ");
