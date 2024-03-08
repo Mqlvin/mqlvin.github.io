@@ -122,12 +122,13 @@ let quoteContainers = [];
 
 let witches = createPoemDiv(quoteContainers, "Witches");
 appendQuote(witches, "Fair is foul, and foul is fair");
+appendQuote(witches, "Beware Macduff / Beware the thane of Fife");
 
 let ross = createPoemDiv(quoteContainers, "Ross");
 appendQuote(ross, "Brave Macbeth - well he deserves that name");
+appendQuote(ross, "But cruel are the times when we are traitors and do not know ourselves");
 
 let macbeth = createPoemDiv(quoteContainers, "Macbeth");
-appendQuote(macbeth, "The instruments of darkness tell us truthes");
 appendQuote(macbeth, "We will proceed no further in this business");
 appendQuote(macbeth, "Macbeth doth murdered sleep");
 appendQuote(macbeth, "O, full of scorpions is my mind, dear wife!");
@@ -147,13 +148,17 @@ appendQuote(ladyMacbeth, "The Thane of Fife had a wife - where is she now?");
 let macduff = createPoemDiv(quoteContainers, "Macduff");
 appendQuote(macduff, "Most sacrilegious murder hath broke up the Lord's anointed temple");
 appendQuote(macduff, "Tyrant, show thy face");
+appendQuote(macduff, "Tell thee, Macduff was from his mothers womb");
 
 let banquo = createPoemDiv(quoteContainers, "Banquo");
+appendQuote(banquo, "My noble partner");
 appendQuote(banquo, "I fear thou played'st most foully for it");
 appendQuote(banquo, "have we eaten on the insane root?");
+appendQuote(banquo, "The instruments of darkness tell us truthes");
 
 let malcolm = createPoemDiv(quoteContainers, "Malcolm");
 appendQuote(malcolm, "The dead butcher and his fiend-like queen");
+appendQuote(malcolm, "This tyrant was once thought honest");
 
 
 function disperseContainers(parent, quoteContainers) {
