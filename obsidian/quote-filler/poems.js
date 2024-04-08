@@ -1,4 +1,4 @@
-const WORDS_SHOWN = 2; // max words shown
+const WORDS_SHOWN = 0; // max words shown
 const REQUIRE_MINIMUM = 3; // require at least this many words
 
 function appendQuote(parent, text) {
