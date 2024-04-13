@@ -45,7 +45,12 @@ function onTextChange(event, quoteWords) {
 
 
     // here loop through classlist and determine whether each string WITHTOUT `'` equals element.value.toLowe...
-    if(element.classList.contains(element.value.toLowerCase()) && element.value != "unfilled") { // if its an input box and the word is correct
+    let formattedValue = element.value.replaceAll(" ", "");
+
+    if(element.classList[1]
+        .replaceAll(",", "")
+        .replaceAll(".", "")
+        .replaceAll("!", "") == formattedValue.toLowerCase() && element.value != "unfilled") { // if its an input box and the word is correct
         element.style.borderBottom = "2px solid rgb(100, 202, 113)"; // style it
         element.setAttribute("readonly", "readonly"); // make it read only
         
