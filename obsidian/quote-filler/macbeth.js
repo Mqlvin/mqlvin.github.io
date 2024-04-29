@@ -169,15 +169,15 @@ appendQuote(malcolm, "This tyrant was once thought honest");
 
 
 function disperseContainers(parent, quoteContainers) {
-    for(let i = 0; i < quoteContainers.length; i++) {
-        parent.appendChild(quoteContainers[i]);
-    }
-
-    //while(quoteContainers.length != 0) {
-    //    let randIndex = Math.floor(Math.random() * (quoteContainers.length));
-    //    parent.appendChild(quoteContainers[randIndex]);
-    //    quoteContainers.splice(randIndex, 1);
+    //for(let i = 0; i < quoteContainers.length; i++) {
+    //    parent.appendChild(quoteContainers[i]);
     //}
+
+    while(quoteContainers.length != 0) {
+        let randIndex = Math.floor(Math.random() * (quoteContainers.length));
+        parent.appendChild(quoteContainers[randIndex]);
+        quoteContainers.splice(randIndex, 1);
+    }
 }
 
 disperseContainers(document.body, quoteContainers);
