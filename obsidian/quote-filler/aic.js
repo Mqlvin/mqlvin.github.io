@@ -162,8 +162,14 @@ appendQuote(gerald, "Everything's all right now, Sheila. What about this ring?")
 
 
 function disperseContainers(parent, quoteContainers) {
-    for(let i = 0; i < quoteContainers.length; i++) {
-        parent.appendChild(quoteContainers[i]);
+    //for(let i = 0; i < quoteContainers.length; i++) {
+    //    parent.appendChild(quoteContainers[i]);
+    //}
+
+    while(quoteContainers.length != 0) {
+        let randIndex = Math.floor(Math.random() * (quoteContainers.length));
+        parent.appendChild(quoteContainers[randIndex]);
+        quoteContainers.splice(randIndex, 1);
     }
 }
 
