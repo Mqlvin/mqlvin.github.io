@@ -134,6 +134,11 @@ appendQuote(scrooge, "Darkness is cheap and Scrooge liked it");
 appendQuote(scrooge, "I should like to be able to say a word or two to my clerk just now");
 appendQuote(scrooge, "The Spirits of all Three shall strive within me");
 appendQuote(scrooge, "I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy");
+appendQuote(scrooge, "Not the little prize Turkey, the big one?");
+appendQuote(scrooge, "If they would rather die they had better do it and decrease the surplus population");
+
+let theCharityMen = createPoemDiv(quoteContainers, "Charity Men");
+appendQuote(theCharityMen, "many thousands are in want of common necessities");
 
 let marleysGhost = createPoemDiv(quoteContainers, "Marley's Ghost");
 appendQuote(marleysGhost, "Mankind was my business");
@@ -144,7 +149,7 @@ appendQuote(belle, "Another idol has displaced me... a golden one");
 appendQuote(belle, "May you be happy in the life you have chosen");
 
 let misc = createPoemDiv(quoteContainers, "Fred / Bob / Bob / Fezziwig");
-appendQuote(misc, "give him the same chance every year whether he likes it or not");
+appendQuote(misc, "I mean to give him the same chance every year whether he likes it or not");
 appendQuote(misc, "My little, little child!");
 appendQuote(misc, "I'll give you Mr. Scrooge, the founder of the feast.");
 appendQuote(misc, "No more work tonight, Christmas Eve");
