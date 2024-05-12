@@ -136,6 +136,7 @@ appendQuote(scrooge, "The Spirits of all Three shall strive within me");
 appendQuote(scrooge, "I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy");
 appendQuote(scrooge, "Not the little prize Turkey, the big one?");
 appendQuote(scrooge, "If they would rather die they had better do it and decrease the surplus population");
+appendQuote(scrooge, "Oh, a great many back payments are included in that amount, I assure you.");
 
 let theCharityMen = createPoemDiv(quoteContainers, "Charity Men");
 appendQuote(theCharityMen, "many thousands are in want of common necessities");
