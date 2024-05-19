@@ -130,6 +130,7 @@ let quoteContainers = [];
 let inspector = createPoemDiv(quoteContainers, "The Inspector");
 appendQuote(inspector, "it's better to ask for the Earth than to take it");
 appendQuote(inspector, "he must wait his turn");
+appendQuote(inspector, "And be quiet for a moment and listen to me");
 appendQuote(inspector, "Public men, Mr Birling, have responsibilities as well as privilages");
 appendQuote(inspector, "You think young women ought to be protected against unpleasant and disturbing things");
 appendQuote(inspector, "Each of you helped to kill her. Remember that. Never forget it. But then I don't think you ever will.");
@@ -139,6 +140,7 @@ appendQuote(sheila, "But these girls aren't cheap labour - they're people");
 appendQuote(sheila, "Look mummy - isn't it a beauty");
 appendQuote(sheila, "I'm not a child don't forget. I've a right to know");
 appendQuote(sheila, "It's you two who are being childish - trying not to face the facts");
+appendQuote(sheila, "You're squiffy");
 
 let mrsB = createPoemDiv(quoteContainers, "Mrs Birling");
 appendQuote(mrsB, "I'm sorry she should have come to such a horrible end. But I accept no blame for it at all.");
@@ -152,6 +154,7 @@ appendQuote(mrB, "She'd had a lot to say - far too much - so she had to go");
 appendQuote(mrB, "If you don't come down sharply on some of these people, they'd soon be asking for the Earth");
 appendQuote(mrB, "Inspector, I've told you this before. I don't like the tone nor the way you're handling this inquiry");
 appendQuote(mrB, "There's every excuse for what both your mother and I did");
+appendQuote(mrB, "I've got to cover this up as soon as I can");
 appendQuote(mrB, "The famous younger generation who know it all. And they can't even take a joke");
 
 let gerald = createPoemDiv(quoteContainers, "Gerald");
@@ -159,6 +162,11 @@ appendQuote(gerald, "Hear hear! And I think my father would agree to that");
 appendQuote(gerald, "It's a favourite haunt of women of the town");
 appendQuote(gerald, "Well, you were right. There isn't any such inspector. We've been had");
 appendQuote(gerald, "Everything's all right now, Sheila. What about this ring?");
+
+let eric = createPoemDiv(quoteContainers, "Eric");
+appendQuote(eric, "Why shouldn't they try for higher wages");
+appendQuote(eric, "You're not the kind of father a chap could go to when he's in trouble");
+appendQuote(eric, "I don't even remember - that's the hellish thing");
 
 
 function disperseContainers(parent, quoteContainers) {
